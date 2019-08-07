@@ -34,5 +34,5 @@ MySQLのテーブルにToDoの状態データを記録して動作させよう�
 *そのため現状では再起動するごとにToDoが初期化されます。
 ## 動作確認
 heroku上で実行できるようにデプロイしました。  
-<https://java-todolist.herokuapp.com>
-
+<https://java-todolist.herokuapp.com>  
+*推奨ブラウザ: Google Chrome
