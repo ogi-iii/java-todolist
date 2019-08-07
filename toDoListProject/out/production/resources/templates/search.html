@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/sanitize.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <title>todo search page</title>
+  </head>
+  <body>
+    <header>
+      <a class="topLink" th:href="@{/}">
+        TODOリスト
+      </a>
+    </header>
+    <div class="ToDoSearcher">
+      <form th:action="@{/result}" class="TodoSearchForm" method="GET">
+        <input class="inputForm" type="text" name="content" placeholder="未完了のToDoを検索"><input class="inputButton" type="submit" value="検索">
+      </form>
+    </div>
+    <div class="ToDoList">
+      <p th:if="${resultMessage}" th:text="${resultMessage}" class="alert"></p>
+      <ul>
+        <li th:each="todo: ${resultTodos}">
+          <div class="todoInfo">
+            <p th:text="${todo.content}"></p>
+            <p>期限：<span th:text="${todo.deadline}"></span></p>
+            <p>作成日：<span th:text="${todo.today}"></span></p>
+          </div>
+          <div class="todoChanger">
+            <form th:action="@{/edit}" method="GET">
+              <button class="inputEdit" type="submit" name="id" th:value="${todo.id}">編集</button>
+            </form>
+            <form th:action="@{/resultChangeDid}" method="POST">
+              <button th:if="${todo.done}" class="input" type="submit" name="id" th:value="${todo.id}">完了</button>
+              <button th:unless="${todo.done}" class="input didnt" type="submit" name="id" th:value="${todo.id}">未完了</button>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

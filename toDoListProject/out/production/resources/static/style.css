@@ -1,0 +1,170 @@
+body {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+header {
+  background-color: rgba(0, 155, 255, 0.3);
+  height: 70px;
+}
+
+header a {
+  line-height: 70px;
+  font-size: 30px;
+}
+
+header .topLink {
+  color: black;
+  float: left;
+  padding-left: 20px;
+  text-decoration: none;
+}
+
+header .searchLink {
+  float: right;
+  padding-right: 20px;
+  color: rgba(50, 180, 50, 1.0);
+}
+
+.ToDoMaker {
+  margin: 5px 20px 5px 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.ToDoEditer {
+  margin: 5px 20px 5px 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.ToDoMaker .title {
+  font-size: 20px;
+  padding: 15px;
+  padding-bottom: 0px;
+}
+
+.ToDoMaker .error {
+  font-size: 18px;
+  padding: 15px;
+  padding-top: 5px;
+  color: red;
+}
+
+.ToDoEditer .title {
+  font-size: 20px;
+  padding: 15px;
+  padding-bottom: 0px;
+}
+
+.ToDoEditer .error {
+  font-size: 18px;
+  padding: 15px;
+  padding-top: 5px;
+  color: red;
+}
+
+.ToDoForm label {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 30px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  width: 15%;
+}
+
+.ToDoForm .inputForm {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 30px;
+  width: 55%;
+}
+
+.ToDoForm .inputButton {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  width: 20%;
+  background-color: rgba(0, 155, 255, 0.3);
+}
+
+.ToDoSearcher {
+  text-align: center;
+  padding: 50px 20px 20px;
+}
+
+.TodoSearchForm .inputForm {
+  display: inline-block;
+  font-size: 15px;
+  line-height: 40px;
+  width: 75%;
+}
+
+.TodoSearchForm .inputButton {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  width: 20%;
+  background-color: rgba(0, 155, 255, 0.3);
+}
+
+.ToDoList {
+  padding: 10px 20px;
+}
+
+.ToDoList .alert {
+  color: red;
+}
+
+.ToDoList .TodoResult {
+  color: red;
+}
+
+.todoInfo {
+  display: inline-block;
+}
+
+li {
+  padding: 10px 20px 0px;
+  margin-bottom: 20px;
+  display: block;
+  font-size: 18px;
+  list-style: none;
+  line-height: 20px;
+  border: solid thin rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.todoChanger {
+  display: inline-block;
+  line-height: 130px;
+}
+
+.todoChanger form {
+  display: inline-block;
+}
+
+.todoChanger .inputEdit {
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 50px;
+  width: 100px;
+  text-align: center;
+  background-color: rgba(50, 180, 50, 0.5);
+}
+
+.todoChanger .input {
+  font-size: 20px;
+  line-height: 40px;
+  margin-left: 20px;
+  width: 100px;
+  text-align: center;
+  background-color: rgba(0, 155, 255, 0.3);
+}
+
+.ToDoList .todoChanger .didnt {
+  background-color: rgba(255, 0, 0, 0.3) !important;
+}
