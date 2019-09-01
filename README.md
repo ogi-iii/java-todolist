@@ -10,7 +10,7 @@ toDoListProjectUpdated: 前回のtoDoListProjectに修正を加えたもの (※
 ## 全体の設計・構成
 ### Javaファイル  
 - ToDo.java : ToDoクラス(データの生成・getter/setter)
-- ToDoRepository.java : H2データベースへの動作(save, findAll, deleteなど)ファイル
+- ToDoRepository.java : H2データベースへの動作ファイル(save, findAll, deleteなど)
 - ToDoService.java : ToDoRepository.javaの操作クラス
 - ToDoController.java : 画面遷移, ToDo作成・変更・削除・検索など
 - ToDoListProjectApplication.java : SpringBootプロジェクト全体の起動/停止ファイル  
@@ -19,7 +19,7 @@ toDoListProjectUpdated: 前回のtoDoListProjectに修正を加えたもの (※
 - edit.html : ToDo編集画面(ToDoの表示, 編集, 削除)
 - search.html : 検索画面(ToDoの検索)
 ## 開発環境のセットアップ手順
-H2データベースを使用しているため, 環境設定は必要ありません。
+H2データベースを使用しているため, 環境設定は特に必要ありません。
 ## 前回までの進捗状況
 ### できているところ
 仕様書に記載されていた機能および各画面の実装は完了しています。  
@@ -29,13 +29,12 @@ MySQLのテーブルにToDoの状態データを記録して動作させよう�
 ## 現在の進捗状況 (※ 9月1日 時点)
 ### 修正できたところ
 これまでの機能に加えて, 編集画面でtodoの削除ができるようにしました。  
-またH2データベースを使用して, 再起動しても初期化せず, todoを保存できるようになりました。
+またH2データベースを使用して, 再起動しても初期化せず, todoを保存できるようにしました。
 ### まだ修正できていないところ
 MySQLの使い方が未だに理解できていないため, 今回は代替策としてH2データベースを使用しました。
 ## 動作確認
 heroku上で実行できるようにデプロイしてあります。  
 <https://java-todolist.herokuapp.com>  
 *推奨ブラウザ: Google Chrome  
-(※ 9月1日 追記)  
-herokuでH2データベースを使用する方法が分からなかったため, heroku上にデプロイしてあるwebアプリは前作のまま修正を加えていません。  
-そのため再起動するごとにToDoが初期化されます。
+### ※ 以下, 9月1日 追記   
+herokuでH2データベースを使用する方法が分からなかったため, heroku上にデプロイしてあるwebアプリは前作のまま修正を加えていません。そのため再起動するごとにToDoが初期化されます。
