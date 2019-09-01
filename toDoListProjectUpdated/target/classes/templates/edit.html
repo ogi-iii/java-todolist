@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/sanitize.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <title>todo edit page</title>
+  </head>
+  <body>
+    <header>
+      <a class="topLink" th:href="@{/}">
+        TODOリスト
+      </a>
+      <a class="searchLink" th:href="@{/search}">
+        検索
+      </a>
+    </header>
+    <div class="ToDoEditer">
+      <p class="title">ToDoの内容を変更します</p>
+      <p th:if="${errorMessage}" th:text="${errorMessage}" class="error"></p>
+      <form th:action="@{/recreate}" class="ToDoForm" method="POST">
+        <div class="todoTitle">
+          <label for="todoTitle">ToDo名</label>
+          <input class="inputForm" type="text" id="todoTitle" name="content" placeholder="ToDo名" th:value="${todo.content}">
+        </div>
+        <div class="todoDeadline">
+          <label for="todoDeadline">期限</label>
+          <input class="inputForm" type="date" id="todoDeadline" name="deadline" placeholder="期限" th:value="${todo.deadline}"><button class="inputButton" type="submit" name="id" th:value="${todo.id}">更新</button>
+        </div>
+      </form>
+      <form th:action="@{/delete}" class="" method="POST">
+        <button class="deleteButton" type="submit" name="id" th:value="${todo.id}">ToDoを削除</button>
+      </form>
+    </div>
+  </body>
+</html>

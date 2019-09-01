@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/sanitize.css}">
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <title>todo top page</title>
+  </head>
+  <body>
+    <header>
+      <a class="topLink" th:href="@{/}">
+        TODOリスト
+      </a>
+      <a class="searchLink" th:href="@{/search}">
+        検索
+      </a>
+    </header>
+    <div class="ToDoMaker">
+      <p class="title">新しいToDoを作成する</p>
+      <p th:if="${errorMessage}" th:text="${errorMessage}" class="error"></p>
+      <form th:action="@{/create}" class="ToDoForm" method="POST">
+        <div class="todoTitle">
+          <label for="todoTitle">ToDo名</label>
+          <input class="inputForm" type="text" id="todoTitle" name="content" placeholder="ToDo名">
+        </div>
+        <div class="todoDeadline">
+          <label for="todoDeadline">期限</label>
+          <input class="inputForm" type="date" id="todoDeadline" name="deadline" placeholder="期限"><input class="inputButton" type="submit" value="ToDoの追加">
+        </div>
+      </form>
+    </div>
+    <div class="ToDoList">
+      <p th:unless="${todoBool}" class="alert">登録されたToDoはございません</p>
+      <ul>
+        <li th:each="todo: ${todos}">
+          <div class="todoInfo">
+            <p th:text="${todo.content}"></p>
+            <p>期限：<span th:text="${todo.deadline}"></span></p>
+            <p>作成日：<span th:text="${todo.today}"></span></p>
+          </div>
+          <div class="todoChanger">
+            <form th:action="@{/edit}" method="GET">
+              <button class="inputEdit" type="submit" name="id" th:value="${todo.id}">編集</button>
+            </form>
+            <form th:action="@{/changeDid}" method="POST">
+              <button th:if="${todo.getDone()}" class="input" type="submit" name="id" th:value="${todo.getId()}">完了</button>
+              <button th:unless="${todo.getDone()}" class="input didnt" type="submit" name="id" th:value="${todo.getId()}">未完了</button>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
