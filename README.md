@@ -1,4 +1,4 @@
-# toDoListProject (※ 9月1日 追記)
+# java-todolist (※ 9月1日 追記)
 ## フォルダ説明
 toDoListProject: 8月上旬に作成したもの  
 toDoListProjectUpdated: 前回のtoDoListProjectに修正を加えたもの (※ 9月1日 更新)  
