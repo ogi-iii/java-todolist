@@ -6,7 +6,7 @@ toDoListProjectUpdated: 前回のtoDoListProjectに修正を加えたもの (※
 ## 使用した技術要素
 言語： Java (version: 11.0.2)  
 フレームワーク： SpringBoot(Maven)  
-→ Web, JPA, Thymeleaf, DevTools, Lombok, H2(*MySQLの代用) 使用  
+→ Web, JPA, Thymeleaf, DevTools, Lombok, H2(*MySQLの代用), Flyway Migration 使用  
 ## 全体の設計・構成
 ### Javaファイル  
 - ToDo.java : ToDoクラス(データの生成・getter/setter)
